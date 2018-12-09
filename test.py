@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy
 import sklearn
-
+#image recognition
 from sklearn import datasets
 #literal datasets
 from sklearn import svm
@@ -14,12 +14,12 @@ print(digits.data)
 print(digits.target)
 #print(digits.images[0])
 
-clf = svm.SVC(gamma=0.001, C=100)
+model = svm.SVC(gamma=0.0001, C=100)
 #print(len(digits.data))
 X,y = digits.data[:-10], digits.target[:-10]
-clf.fit(X,y)
+model.fit(X,y)
 
-print('Prediction:',clf.predict(digits.data[[-5]]))
+print('Prediction:',(model.predict(digits.data[[-5]]))[0])
 #print(digits.data[:-5])
 plt.imshow(digits.images[-5], cmap=plt.cm.gray_r, interpolation='nearest')
 plt.show()
